@@ -32,14 +32,13 @@ spec:
       labels:
         app.kubernetes.io/name: plex 
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
       containers:
         - name: plex 
           image: plexinc/pms-docker 
           env:
-        - name: PGID
-          value: "1000"
-        - name: PUID
-          value: "1000"
             - name: TZ 
               value: America/Chicago 
             - name: PLEX_CLAIM 
