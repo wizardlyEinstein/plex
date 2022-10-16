@@ -1,0 +1,11 @@
+images:
+- name: plexinc/pms-docker 
+  newTag: 1.24.5.5173-8dcc73a59 
+
+namespace: plex 
+
+resources:
+- plex.yaml 
+
+generators:
+- secrets.yaml
