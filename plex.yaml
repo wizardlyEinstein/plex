@@ -54,9 +54,15 @@ spec:
           volumeMounts:
             - name: data
               mountPath: /data/
+            - name: config 
+              mountPath: /config/
       volumes:
         - name: data
           hostPath:
            path: /storage/k3s/plex
+           type: DirectoryOrCreate
+        - name: config 
+          hostPath:
+           path: /storage/k3s/config
            type: DirectoryOrCreate
 
