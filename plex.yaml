@@ -11,18 +11,6 @@ spec:
       targetPort: 32400 
       protocol: TCP
       name: http
-    - port: 3005 
-      targetPort: 3005 
-      protocol: TCP
-      name: plex-companion 
-    - port: 5353 
-      targetPort: 5353 
-      protocol: UDP 
-      name: discovery 
-    - port: 8342 
-      targetPort: 8342 
-      protocol: TCP 
-      name: roku 
   selector:
     app.kubernetes.io/name: plex 
 
@@ -56,6 +44,8 @@ spec:
               value: "1000" 
             - name: TZ 
               value: America/Chicago 
+            - name: PLEX_CLAIM 
+              value: "" 
             - name: PLEX_CLAIM_BROKEN
               valueFrom:
                 secretKeyRef:
@@ -66,15 +56,6 @@ spec:
             - name: http
               containerPort: 32400 
               protocol: TCP
-            - name: plex-companion 
-              containerPort: 3005
-              protocol: TCP 
-            - name: discovery 
-              containerPort: 5353 
-              protocol: UDP 
-            - name: roku 
-              containerPort: 8324
-              protocol: TCP 
           volumeMounts:
             - name: data
               mountPath: /data/
