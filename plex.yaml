@@ -57,7 +57,7 @@ spec:
               value: "1000" 
             - name: TZ 
               value: America/Chicago 
-            - name: PLEX_CLAIM 
+            - name: PLEX_CLAIM_BROKEN
               valueFrom:
                 secretKeyRef:
                   name: secrets 
