@@ -47,9 +47,6 @@ spec:
       containers:
         - name: plex 
           image: linuxserver/plex 
-          resources:
-            limits:
-              gpu.intel.com/i915: 1
           env:
             - name: VERSION 
               value: docker 
