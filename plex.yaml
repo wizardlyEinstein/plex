@@ -11,6 +11,7 @@ spec:
       targetPort: 32400 
       protocol: TCP
       name: http
+  type: LoadBalancer
   selector:
     app.kubernetes.io/name: plex 
 
@@ -34,7 +35,7 @@ spec:
     spec:
       containers:
         - name: plex 
-          image: linuxserver/plex 
+          image: plexinc/pms-docker 
           env:
             - name: VERSION 
               value: docker 
@@ -44,9 +45,7 @@ spec:
               value: "1000" 
             - name: TZ 
               value: America/Chicago 
-            - name: PLEX_CLAIM 
-              value: "" 
-            - name: PLEX_CLAIM_BROKEN
+            - name: PLEX_CLAIM
               valueFrom:
                 secretKeyRef:
                   name: secrets 
