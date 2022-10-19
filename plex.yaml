@@ -33,6 +33,7 @@ spec:
       labels:
         app.kubernetes.io/name: plex 
     spec:
+      hostname: bender
       containers:
         - name: plex 
           image: plexinc/pms-docker 
