@@ -39,9 +39,6 @@ spec:
       containers:
         - name: plex 
           image: plexinc/pms-docker 
-          resources:
-            limits:
-              gpu.intel.com/i915: 1
           env:
             - name: VERSION 
               value: docker 
