@@ -66,10 +66,10 @@ spec:
       volumes:
         - name: data
           hostPath:
-           path: /test/plex/data
-           type: DirectoryOrCreate
+           path: /ssd/k3s/plex/data 
+           type: Directory
         - name: config 
           hostPath:
-           path: /test/plex/config
-           type: DirectoryOrCreate
+           path: /ssd/k3s/plex/config
+           type: Directory
 
