@@ -7,10 +7,26 @@ metadata:
     app.kubernetes.io/name: plex 
 spec:
   ports:
-    - port: 32400 
-      targetPort: 32400 
+    - port: 32400
+      targetPort: 32400
       protocol: TCP
       name: http
+    - port: 1900
+      targetPort: 1900
+      protocol: UDP
+      name: ssdp
+    - port: 3005
+      targetPort: 3005
+      protocol: TCP
+      name: companion
+    - port: 5353
+      targetPort: 5353
+      protocol: UDP
+      name: discovery
+    - port: 32469
+      targetPort: 32469
+      protocol: TCP
+      name: dlna
   type: LoadBalancer
   selector:
     app.kubernetes.io/name: plex 
@@ -56,7 +72,19 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: 32400 
+              containerPort: 32400
+              protocol: TCP
+            - name: ssdp
+              containerPort: 1900
+              protocol: UDP
+            - name: companion
+              containerPort: 3005
+              protocol: TCP
+            - name: discovery
+              containerPort: 5353
+              protocol: UDP
+            - name: dlna
+              containerPort: 32469
               protocol: TCP
           volumeMounts:
             - name: data
