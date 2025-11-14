@@ -94,10 +94,10 @@ spec:
       volumes:
         - name: data
           hostPath:
-           path: /ssd/k3s/plex/data 
+           path: /hdd/k3s/plex/data
            type: Directory
         - name: config 
           hostPath:
-           path: /ssd/k3s/plex/config
+           path: /hdd/k3s/plex/config
            type: Directory
 
