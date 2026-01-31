@@ -1,6 +1,6 @@
 images:
 - name: plexinc/pms-docker
-  newTag: 1.42.2.10156-f737b826c 
+  newTag: 1.43.0.10467-2b1ba6e69
 
 namespace: plex 
 
