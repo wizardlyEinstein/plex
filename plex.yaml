@@ -86,6 +86,9 @@ spec:
             - name: dlna
               containerPort: 32469
               protocol: TCP
+          resources:
+            limits:
+              nvidia.com/gpu: '1'
           volumeMounts:
             - name: data
               mountPath: /data/
